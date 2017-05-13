@@ -8,7 +8,7 @@ var cors = require('cors');
 
 var index = require('./routes/index');
 var test = require('./routes/test');
-var index = require('./routes/test');
+var authIgnacio = require('./routes/authIgnacio');
 
 var app = express();
 
@@ -30,6 +30,7 @@ app.use(cors());
 // Routes
 app.use('/', index);
 app.use('/api/test', test);
+app.use('/api/authIgnacio', authIgnacio);
 
 
 // catch 404 and forward to error handler
