@@ -42,6 +42,12 @@ function setUp(connection) {
         },
         password: {
             type: Sequelize.STRING
+        },
+        latitud: {
+            type: Sequelize.STRING
+        },
+        longitud: {
+            type: Sequelize.STRING
         }
     }, {
       indexes: [
@@ -62,6 +68,7 @@ function setUp(connection) {
      connection.sync({force: createData}).then(result => {
 
         if(createData) {
+            UserIgnacio.create({name: "ignacio", email: "ignacio.past@gmail.com", password: "ignacio1"});
             UserIgnacio.create({name: "user1", email: "emailUser1", password: "passUser1"});
             UserIgnacio.create({name: "user2", email: "emailUser2", password: "passUser2"});
             UserIgnacio.create({name: "user3", email: "emailUser3", password: "passUser3"});
