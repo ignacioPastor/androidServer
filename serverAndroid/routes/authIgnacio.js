@@ -62,12 +62,14 @@ router.post('/', (req, res, next) => {
 
 // Actualiza un usuario
 router.patch('/', (req, res, next) => {
-    console.log("authIgnacioPatch----------------4");
-    let user = req.body;
-    console.log("authIgnacioPatch----------------4");
+    console.log("authIgnacioPatch----------------1");
+    let user = JSON.parse(req.body.user);
+console.log(user);
+console.log(user.id);
+    console.log("authIgnacioPatch----------------2");
     userBackend.updateUser(user)
         .then(u => {
-    console.log("authIgnacioPatch----------------4");
+    console.log("authIgnacioPatch----------------3");
             res.json(u);
         })
         .catch(error => {
