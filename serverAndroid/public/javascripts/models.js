@@ -48,6 +48,9 @@ function setUp(connection) {
         },
         longitud: {
             type: Sequelize.STRING
+        },
+        telefono: {
+            type: Sequelize.STRING
         }
     }, {
       indexes: [
@@ -68,12 +71,12 @@ function setUp(connection) {
      connection.sync({force: createData}).then(result => {
 
         if(createData) {
-            UserIgnacio.create({name: "ignacio", email: "ignacio.past@gmail.com", password: "ignacio1"});
-            UserIgnacio.create({name: "user1", email: "emailUser1", password: "passUser1"});
-            UserIgnacio.create({name: "user2", email: "emailUser2", password: "passUser2"});
-            UserIgnacio.create({name: "user3", email: "emailUser3", password: "passUser3"});
-            UserIgnacio.create({name: "user4", email: "emailUser4", password: "passUser4"});
-            UserIgnacio.create({name: "user5", email: "emailUser5", password: "passUser5"});
+            UserIgnacio.create({name: "ignacio", email: "ignacio.past@gmail.com", password: "ignacio1", telefono: "651650233"});
+            UserIgnacio.create({name: "userDevelop", email: "1", password: "11", telefono: "111"});
+            UserIgnacio.create({name: "user2", email: "emailUser2", password: "passUser2", telefono: "222"});
+            UserIgnacio.create({name: "user3", email: "emailUser3", password: "passUser3", telefono: "333"});
+            UserIgnacio.create({name: "user4", email: "emailUser4", password: "passUser4", telefono: "444"});
+            UserIgnacio.create({name: "user5", email: "emailUser5", password: "passUser5", telefono: "555"});
 
 
 

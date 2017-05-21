@@ -5,20 +5,47 @@ var Promise = require('promise');
 
 
 exports.getUserByEmail = function (email){
-    console.log("userIgnacioBackend---------------1");
+    console.log("userIgnacioBackendGetByEmail---------------1");
     let myUser = new Promise((fulfill, reject) => {
-    console.log("userIgnacioBackend---------------2");
+    console.log("userIgnacioBackendGetByEmail---------------2");
         models.UserIgnacio.findOne({where: {email: email}, raw: true}).then(user => {
             if(user) {
-    console.log("userIgnacioBackend---------------3");
+    console.log("userIgnacioBackendGetByEmail---------------3");
                 fulfill(user);
             }
             else {
-    console.log("userIgnacioBackend---------------4");
+    console.log("userIgnacioBackendGetByEmail---------------4");
                 fulfill(null);
             }
         }).catch(reject);
     });
-    console.log("userIgnacioBackend---------------5");
+    console.log("userIgnacioBackendGetByEmail---------------5");
     return myUser;
+};
+
+exports.updateUser = function (user) {
+    console.log("userIgnacioBackendUpdateUser---------------1");
+    return new Promise((fulfill, reject) => {
+    console.log("userIgnacioBackendUpdateUser---------------2");
+        models.UserIgnacio.update(user,{where: {id: user.id}})
+            .then(rows => {
+    console.log("userIgnacioBackendUpdateUser---------------3");
+                fulfill({success: true});
+            })
+            .catch(reject);
+    })
+};
+
+exports.addUser = function (user) {
+    console.log("userIgnacioBackendAddUser---------------1");
+    return new Promise((fulfill, reject) => {
+    console.log("userIgnacioBackendAddUser---------------2");
+        models.UserIgnacio.create(user)
+            .then(result => {
+                
+    console.log("userIgnacioBackendAddUser---------------3");
+                fulfill(result)
+            })
+            .catch(reject);
+    })
 };
