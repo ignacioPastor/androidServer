@@ -49,3 +49,15 @@ exports.addUser = function (user) {
             .catch(reject);
     })
 };
+
+//Function to get all the clients from the database
+exports.getAll = function() {
+    console.log("userIgnacioBackendGetAll----------------1");
+    return new Promise((fulfill, reject) => {
+    console.log("userIgnacioBackendGetAll----------------2");
+        models.UserIgnacio.findAll({order: 'telefono asc', raw: true}).then(users => {
+    console.log("userIgnacioBackendGetAll----------------3");
+            return fulfill(users);
+        }).catch(reject);
+    })
+};

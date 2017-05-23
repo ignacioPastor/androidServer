@@ -78,4 +78,18 @@ console.log(user.id);
         });
 });
 
+// Get clients with unpaid status
+router.get('/getAll', function(req, res, next) {
+    console.log("authIgnacioGetAll---------------1");
+    userBackend.getAll()
+        .then(users => {
+    console.log("authIgnacioGetAll---------------2");
+            res.json(users);
+        })
+        .catch(error => {
+    console.log("authIgnacioGetAll---------------3");
+            res.status(500).end(error);
+        });
+});
+
 module.exports = router;
