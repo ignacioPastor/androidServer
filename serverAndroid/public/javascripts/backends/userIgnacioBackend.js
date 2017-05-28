@@ -61,3 +61,17 @@ exports.getAll = function() {
         }).catch(reject);
     })
 };
+
+//Add a new user
+exports.addUser = function (user) {
+    return new Promise((fulfill, reject) => {
+    console.log(user);
+        models.UserIgnacio.create(user)
+            .then(result => {
+                fulfill(result)
+            })
+            .catch(reject => {
+    console.log(reject);
+            });
+    })
+};

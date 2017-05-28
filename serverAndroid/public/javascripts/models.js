@@ -71,7 +71,7 @@ function setUp(connection) {
      connection.sync({force: createData}).then(result => {
 
         if(createData) {
-            UserIgnacio.create({name: "ignacio", email: "ignacio.past@gmail.com", password: "ignacio1", telefono: "651650233"});
+            // UserIgnacio.create({name: "ignacio", email: "ignacio.past@gmail.com", password: "ignacio1", telefono: "651650233"});
             UserIgnacio.create({name: "userDevelop", email: "1", password: "11", telefono: "111"});
             UserIgnacio.create({name: "user2", email: "emailUser2", password: "passUser2", telefono: "222"});
             UserIgnacio.create({name: "user3", email: "emailUser3", password: "passUser3", telefono: "333"});

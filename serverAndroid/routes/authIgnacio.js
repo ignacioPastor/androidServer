@@ -92,4 +92,16 @@ router.get('/getAll', function(req, res, next) {
         });
 });
 
+router.post('/insert', (req, res, next) => {
+    let user = req.body;
+     console.log(user);
+    userBackend.addUser(user)
+        .then(answer => {
+            res.json(answer);
+        })
+        .catch(error => {
+            res.status(500).end(error);
+        });
+});
+
 module.exports = router;
